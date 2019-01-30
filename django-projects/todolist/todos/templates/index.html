@@ -1,0 +1,11 @@
+<a href="/todos/add">Add</a>
+<ul>
+	{% for todo in todos%}
+	<li>
+		<a href="/todos/details/{{todo.id}}">
+		{{todo.title}}:{{todo.text}}
+	</a>
+	</li>
+
+	{%endfor%}
+</ul>

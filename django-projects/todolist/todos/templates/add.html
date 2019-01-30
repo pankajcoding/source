@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add Todo</title>
+</head>
+<body>
+	<form  method="post" action="{% url 'add'%}">
+		{%csrf_token%}
+		<p><input style="padding: 10px;width:300px" type="text" name="title" placeholder="Title"></p>
+		<p>
+		<textarea placeholder="Text" style="height: 200px;width: 300px;padding: 10px"  name="text"></textarea>
+		
+		</p>
+		<input style="padding: 10px;width:150px" type="submit" name="" value="Add">
+	</form>
+
+</body>
+</html>
