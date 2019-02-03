@@ -6,6 +6,13 @@ def AddMoney():
    global Money
    Money  += 1
 
-print Money
+print (Money)
 AddMoney()
-print Money
+print (Money)
+
+
+
+import numpy as np
+import tensorflow as tf
+
+print('FInished Import')
