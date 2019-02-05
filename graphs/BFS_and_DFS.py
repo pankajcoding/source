@@ -11,7 +11,6 @@ class Graph:
 
 	def BFStraversal(self,s):
 		visited=[False]*len(self.adjlist)
-		print('visited',visited)
 		Q=[]
 		Q.append(s)
 		while(len(Q)!=0):
@@ -23,6 +22,20 @@ class Graph:
 				if visited[v]==False:
 					Q.append(v)
 
+	def DFStraversal(self,s):
+		visited=[False]*len(self.adjlist)
+		stack=[]
+		visited[s]=True
+		stack.append(s)
+		while stack:
+			# print('stack',stack)
+			vertex=stack.pop()
+			print(vertex,end="-->")
+			for v in self.adjlist[vertex]:
+				if visited[v]==False:
+					visited[v]=True
+					stack.append(v)
+
 
 
 
@@ -33,5 +46,8 @@ g.addEdge(1,4)
 g.addEdge(2,3)
 g.addEdge(3,4)
 g.addEdge(4,2)
-g.BFStraversal(0)
 print(g.adjlist)
+print('BFS')
+g.BFStraversal(0)
+print('DFS')
+g.DFStraversal(0)

@@ -12,7 +12,5 @@ print (Money)
 
 
 
-import numpy as np
-import tensorflow as tf
-
-print('FInished Import')
+parent=[0]*10
+print(parent)
