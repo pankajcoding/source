@@ -1,0 +1,32 @@
+class TreeNode:
+    def __init__(self,val):
+        self.val=val
+        self.left=None
+        self.right=None
+
+
+result=[]
+def inorder(A):
+    global result
+    if not A:
+        return
+    inorder(A.left)
+    print(A.val)
+    result.append(A.val)
+    inorder(A.right)
+
+def sortedArrayToBST(A):
+    if len(A)==0:
+        return None
+    mid=len(A)//2
+    val=A[mid]
+    node=TreeNode(val)
+    node.left=sortedArrayToBST(A[:mid])
+    node.right=sortedArrayToBST(A[mid+1:])
+    return node
+
+
+A=[1,2,3,4,5,6,7,8,9]
+head=sortedArrayToBST(A)
+inorder(head)
+print(result)
